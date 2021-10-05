@@ -1,0 +1,30 @@
+vector<int> largestAndSecondLargest(int sizeOfArray, int arr[]){
+       
+        
+        int max2=-1;
+        int max=0;
+        for(int i=1;i<sizeOfArray;i++)
+        {
+            if(arr[i]>arr[max])
+            {
+                max2=max;
+                max=i;
+            }
+            else if(arr[i]!=arr[max])
+            {
+                if(arr[i]==-1 || arr[i]>arr[max2])
+                {
+                    max2=i;
+                }
+            }
+        }
+        
+         if(max2!=-1)
+         return {arr[max], arr[max2]};
+         
+         if(max2==-1)
+         return {arr[max], -1};
+        
+        
+         
+    }
